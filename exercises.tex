@@ -1,0 +1,33 @@
+\documentclass[letterpaper]{article}
+\usepackage{amsmath,amssymb,amsthm,fourier,enumitem}
+
+\newcommand{\problem}[1]{\goodbreak\noindent\textbf{Problem~{#1}.}}
+
+\newcommand{\normal}{\trianglelefteq}
+\newcommand{\aut}{\mathrm{Aut}}
+\newcommand{\inn}{\mathrm{Inn}}
+
+\newcommand{\ord}[1]{|{#1}|}
+
+\title{Berkeley Problems in Mathematics}
+\author{John Peloquin}
+\date{}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+Alternate solutions to problems from \emph{Berkeley Problems in Mathematics}.
+\end{abstract}
+
+\section*{Chapter~6}
+\subsection*{Section~1}
+\problem{6.1.9}
+Let $G$~be a finite group with identity~$e$ such that for all $a,b\in G$ with $a,b\ne e$, there exists an automorphism~$\sigma$ of~$G$ such that $\sigma(a)=b$. Then $G$~is abelian.
+\begin{proof}
+Set $n=\ord{G}$ and assume $n\ne1$. Then $\aut(G)$~acts on~$G$ and yields two orbits, the trivial orbit and an orbit of order $n-1$. Recall $\inn(G)\normal\aut(G)$, so $\inn(G)$~also acts on~$G$, and the order of any $\inn(G)$-orbit divides the order of an $\aut(G)$-orbit.\footnote{\cite{dummit03}, Exercise~4.1.9(a).} This implies the order of any $\inn(G)$-orbit divides $n-1$. But by the Orbit-Stabilizer Theorem, the order of any $\inn(G)$-orbit also divides~$\ord{\inn(G)}$. And since there is a natural surjection $G\to\inn(G)$, $\ord{\inn(G)}$~in turn divides~$n$. It follows that there are no nontrivial $\inn(G)$-orbits, so any element in~$G$ is preserved under conjugation by another element, and hence $G$~is abelian.
+\end{proof}
+
+\begin{thebibliography}{0}
+\bibitem{dummit03} Dummit, David~S. and Richard~M. Foote. \emph{Abstract Algebra, 3rd~ed.} Wiley, 2003.
+\end{thebibliography}
+\end{document}
